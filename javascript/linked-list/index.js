@@ -1,6 +1,13 @@
 'use strict';
 
 class LinkedList {
+    constructor() {
+        // code
+      }
+
+  methodName() {
+    // code
+  }
 
 }
 

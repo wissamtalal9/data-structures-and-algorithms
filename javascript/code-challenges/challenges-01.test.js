@@ -144,8 +144,8 @@ const fizzbuzz = (arr) => {
   arr.forEach(Element =>{
     Element/3 == 0 ? arr.push(Element.name +' Divide 3 '+' Fizz');
     Element/5 == 0 ? arr.push(Element.name +' Divide 5 '+' Buzz');
-    (Element/3 && Element/5) == 0 ? arr.push(Element.name +' Divide 3 & 5 ' + ' Fizz Buzz');
-};
+    Element/3 && Element/5 == 0 ? arr.push(Element.name +' Divide 3 & 5 ' + ' Fizz Buzz');
+});
 return arr;
 
 /* ------------------------------------------------------------------------------------------------
