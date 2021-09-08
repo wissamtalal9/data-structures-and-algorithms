@@ -122,8 +122,8 @@ const createList = (availableItems) => {
   // Solution code here...
   let AllArray = [];
   availableItems.forEach(Element=>{
-Element.available ===true ? AllArray.push(Element.name)+',';
-  })
+Element.available ===true ? AllArray.push(Element.name)+','})
+return AllArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
