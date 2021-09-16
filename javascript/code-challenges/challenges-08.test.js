@@ -55,8 +55,26 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
+
+//   charArray.sort((value_1,value_2)=>{
+//     if(value_1.children.length<value_2.children.length){
+//       return -1;
+//     }else if(value_1.children.length>value_2.children.length){
+//       return 1;
+//     }else{
+
+//       if(value_1.house<value_2.house){
+//         return -1;
+//       }else if(value_1.house>value_2.house){
+//         return 1;
+//       }else return 0;
+//     }
+//   });
+//   return charArray;
+// };
   // Solution code here...
-  return charArray.sort((value_1,value_2)=>{
+  return charArray.sort((value_1,value_2)=>
+  {
    return value_1.children.length - value_2.children.length || value_1.name
   })
 };
