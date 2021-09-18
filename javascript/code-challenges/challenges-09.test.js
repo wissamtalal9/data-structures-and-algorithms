@@ -10,15 +10,11 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
-  let maximum = arr.reduce((accumalator, currentValue)=>{
-    if (accumalator> currentValue){
-      return accumalator;
-    }else{
-      return currentValue;
-    }
-  },0);
-  return maximum;
-};maxInArray( [4,2,7,5,9,2]);
+  let maximum = arr.reduce((a, b) => { 
+    return Math.max(a, b); 
+  });
+ return maximum;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -34,13 +30,8 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
-  let newArray=Object.keys(obj);
-  newArray.forEach(value=>
-  {
-    return (value);
-  });
-  return newArray;
-};getCourseKeys(courseInfo);
+  return (Object.keys(obj));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -52,19 +43,8 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
-  let founded;
-  Object.values(obj).forEach(valueNew=>
-    {
-    if(value=== valueNew)
-    {
-      founded=true;
-    }else
-    {
-      founded=false;
-    }
-  });
-  return founded;
-};checkValues({ class: '301' }, '301');
+  return Object.values(obj).includes(value);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -87,27 +67,13 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
-  let Values_objects=Object.Values(obj);
-  Values_objects.forEach(value=>{
-    return (value);
-  });
+  let newArray=[];
 
-  let TheKeys=Object.keys(obj);
-  TheKeys.forEach(value=>{
-    return (value);
+  Object.entries(obj).forEach(e=>{
+    newArray.push(e.join(': '));
   });
-
-  let mixed=[];
-  for (let i=0; i<TheKeys.length && i<Values_objects.length; i++)
-  {
-    mixed[i]=`${TheKeys[i]}: ${Values_objects[i]}`;
-  }
-  return mixed;
-};updateNumbers({
-  'Grace Hopper': '222-303-5938',
-  'Ada Lovelace': '222-349-9842',
-  'Alan Turing': '222-853-5933'
-});
+  return newArray;
+};
 
 
 
@@ -160,15 +126,14 @@ const characters = [
   },
 ];
 
-const get_Houses = (arr) => {
-  let house_new = [];
+const getHouses = (arr) => {
+  let newHouses = [];
   // Solution code here...
-  arr.forEach(value=>{
-    house_new.push(value.house);
-  });
-  return house_new;
-  //return house_new;
-};get_Houses(characters);
+  arr.map(elements => {
+    newHouses.push(elements.house)
+});
+  return newHouses;
+  };
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -183,25 +148,24 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-  let have_value;
-  arr.forEach(value=>
-    {
-    if(value.name=== character)
-    {
-      console.log(value.name=== character);
-      if(value.children)
+  let value;
+  arr.map((key)=>{
+
+    if (key.name===character){
+
+      if(Object.values(key).includes(key.children))
       {
-        have_value =true;
+        value=true;  
       }else
       {
-        have_value=false;
+        value=false;
       }
     }
-    //console.log(Object.values(value));
   });
-  return have_value;
-};hasChildrenValues(characters,'Jon');
+  
+ return value;
+
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
