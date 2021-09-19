@@ -76,7 +76,7 @@ const totalSum = (matrix) => {
   x + y, 
   0));
   return TotalArray.reduce((x, y) => x + y, 0);
-
+};
 
 //   let sum = 0;
 // for (let i = 0; i < matrix.length; i++) {
