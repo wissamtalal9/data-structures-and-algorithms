@@ -71,8 +71,8 @@ return: 35
 const totalSum = (matrix) => {
   // Solution code here...
 
-  let sum =matrix.map((arr)=>{
-    return arr.reduce((a,b)=>{
+  let sum =matrix.map((element)=>{
+    return element.reduce((a,b)=>{
       return a+b;
     },0)
   });
@@ -138,7 +138,18 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
+  // we must use nested for loop, for inside for to make summation
 
+    let HoursSum = [];
+
+  for (let i = 0; i < hoursOpen.length; i++) {
+    let TotalSummation = 0;
+    for (let c = 0; c < stores.length; c++) {
+      TotalSummation +=stores[c][i];
+    }
+    HoursSum.push(TotalSummation);
+  }
+return HoursSum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -149,7 +160,16 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  //Solution code here...
+ // we should push data in newArray like (sale : 88 cookies, time: 9 am) with using for each
+  let newArray = [];
+  // data have inside it the information of sale
+  data.forEach((total,hourSales)=> 
+    newArray.push({
+      // (sale : 88 cookies, time: 9 am)
+      sales:`${total} cookies`, time : `${hours[hourSales]}`
+    }));
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
