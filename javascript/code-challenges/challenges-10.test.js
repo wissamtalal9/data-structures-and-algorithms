@@ -71,16 +71,12 @@ return: 35
 const totalSum = (matrix) => {
   // Solution code here...
 
-  let sum =matrix.map((element)=>{
-    return element.reduce((a,b)=>{
-      return a+b;
-    },0)
-  });
-  let totalSum=sum.reduce((a,b)=>{
-    return a+b;
-  },0);
-  return totalSum;
-};
+ let TotalArray = matrix.map((e) => 
+  e.reduce((x, y) => 
+  x + y, 
+  0));
+  return TotalArray.reduce((x, y) => x + y, 0);
+
 
 //   let sum = 0;
 // for (let i = 0; i < matrix.length; i++) {
