@@ -69,37 +69,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
+  // Solution code here...
 
-  let TotalArray = matrix.map((e) => 
+ let TotalArray = matrix.map((e) => 
   e.reduce((x, y) => 
   x + y, 
   0));
   return TotalArray.reduce((x, y) => x + y, 0);
-
-  // const a = matrix.map((y) => y.reduce((a, b) => a + b));
-  // const b = matrix.reduce((a, b) => a.map((v, i) => v + b[i]));
-  // const c = matrix.flat().reduce((a , b) => a + b)
-  // return c;
-// let x= []
-//   x = matrix.reduce((a, b) => a.map((v,i) => v+b[i]));
-//   return x;
-
-  // Solution code here...
-//   let arr = matrix.reduce(function(a, matrix){
-//     return a.map(function(v,i){
-//         return v+matrix[i];
-//     });
-// });
-// return arr;
-  // let sum =matrix.map((element)=>{
-  //   return element.reduce((a,b)=>{
-  //     return a+b;
-  //   },0)
-  // });
-  // let totalSum=sum.reduce((a,b)=>{
-  //   return a+b;
-  // },0);
-  // return totalSum;
 };
 
 //   let sum = 0;
