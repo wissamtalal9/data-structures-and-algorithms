@@ -8,8 +8,9 @@ Write a function named longestString that takes in an array of strings and retur
 
 const longestString = (arr) => {
 // Solution code here...
-  const stringLong = arr.reduce((acc, cur) => acc.length < cur.length ? acc = cur : acc, '');
-  return arr.indexOf(stringLong);
+  const string = arr.reduce((acc, cur) => 
+     acc.length < cur.length ? acc = cur : acc, '');
+  return arr.indexOf(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -22,8 +23,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
-  const arrNew = arr.map(str => str.charAt(0));
-  return arrNew;
+  const newArray = arr.map(str =>
+   str.charAt(0));
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,7 +51,9 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
-  return arr.map(element => element.split('').filter(num => /[0-9]/.test(num)).join(''));
+  return arr.map(item => 
+                 item.split('').filter(num =>
+                                       /[0-9]/.test(num)).join(''));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,7 +66,7 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
-  const oddsArr=  str.split('').filter((element, index)=>{
+  const newArray  =  str.split('').filter((element, index)=>{
     return index % 2 !== 0 ? element: '';
   }) ;
   return oddsArr.join('');
@@ -76,14 +80,14 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
-  const happyArr=arr.reduce((acc, cur) => {
+  const newArray=arr.reduce((acc, cur) => {
     if (/:\)/.test(cur)&&acc){
       acc =true;
     }else
       acc =false;
     return acc;
   }, true);
-  return happyArr;
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
